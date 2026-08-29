@@ -121,3 +121,9 @@ The table below summarizes the performance, training time, inference speed, and 
 
 ![benchmark-model](assets/benchmark-model.png)
 ![comparission-f1-score](assets/comparission-f1-score.png)
+
+---
+
+### 🚀 Live Brief DemoLive Brief Demo
+
+![demo](assets/demo.gif)
