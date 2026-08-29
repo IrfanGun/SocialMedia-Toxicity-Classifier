@@ -1,9 +1,9 @@
 # SocialMedia-Toxicity-Classifier
-End-to-end NLP pipeline classifying social media text into hate speech, offensive language, and neither. Benchmarks classical ML (LogReg, SVM), sequential models (LSTM, GRU, BiLSTM), and a fine-tuned DistilBERT transformer.
+End to end NLP pipeline classifying social media text into hate speech, offensive language, and neither. Benchmarks classical ML (LogReg, SVM), sequential models (LSTM, GRU, BiLSTM), and a fine tuned DistilBERT transformer.
 
-# Multi-Class Social Media Toxicity Classifier
+# Multi Class Social Media Toxicity Classifier
 
-This repository implements an end-to-end machine learning and deep learning pipeline for multi-class social media toxicity classification. The project classifies text into three categories: **Hate Speech**, **Offensive Language**, and **Neither**, leveraging the Kaggle dataset (`mrmorj/hate-speech-and-offensive-language-dataset`).
+This repository implements an end to end machine learning and deep learning pipeline for multi class social media toxicity classification. The project classifies text into three categories: **Hate Speech**, **Offensive Language**, and **Neither**, leveraging the Kaggle dataset (`mrmorj/hate-speech-and-offensive-language-dataset`).
 
 ---
 
@@ -46,7 +46,7 @@ Text features are extracted using `TfidfVectorizer` (max features = 5,000, Engli
 
 ---
 
-## 🧠 2. Deep Learning — Multi-Layer Perceptron (MLP)
+## 🧠 2. Deep Learning —> Multi-Layer Perceptron (MLP)
 
 A fully-connected feedforward neural network built on top of dense TF-IDF vectors, featuring Dropout regularization and computed class weights to counteract severe class imbalance.
 
@@ -63,7 +63,7 @@ A fully-connected feedforward neural network built on top of dense TF-IDF vector
 * **Accuracy:** 81.90%
 * **Precision (Weighted):** 88.00%
 * **Recall (Weighted):** 81.90%
-* **F1-Score (Weighted):** 84.08%
+* **F1 Score (Weighted):** 84.08%
 * **Training Time:** 57.06s (Stopped at Epoch 8 via Early Stopping)
 * **Inference Time:** 0.82 ms/sample
 
@@ -78,7 +78,7 @@ Loss Curve: Validation loss reaches its minimum around Epoch 2–3 before rising
 
 ## 🔄 3. RNN-Based Models (LSTM, GRU, BiLSTM)
 
-Unlike TF-IDF and MLP which treat text as a bag-of-words, sequential models process tokens step-by-step to capture word ordering and contextual dependencies. Texts are tokenized and padded to a maximum length of 100 tokens with an embedding dimension of 64.
+Unlike TF-IDF and MLP which treat text as a bag of words, sequential models process tokens step by step to capture word ordering and contextual dependencies. Texts are tokenized and padded to a maximum length of 100 tokens with an embedding dimension of 64.
 
 ### Benchmark Results
 | Model | Accuracy | Precision (Weighted) | Recall (Weighted) | F1-Score (Weighted) | Training Time | Inference Time | Parameters |
@@ -88,10 +88,10 @@ Unlike TF-IDF and MLP which treat text as a bag-of-words, sequential models proc
 | **GRU** | 0.7832 | 0.8894 | 0.7832 | 0.8194 | 37.59s | 0.0003s | 347,139 |
 
 ### Model Analysis & Findings
-* **LSTM (Long Short-Term Memory):** Performed best among the sequential architectures with an F1-score of **86.37%** and an accuracy of **84.80%**, striking a solid balance between model capacity and training efficiency.
+* **LSTM (Long Short Term Memory):** Performed best among the sequential architectures with an F1 score of **86.37%** and an accuracy of **84.80%**, striking a solid balance between model capacity and training efficiency.
 * **BiLSTM (Bidirectional LSTM):** Despite reading text in both forward and backward directions, it yielded slightly lower accuracy (**83.19%**) and required nearly double the training time (62.07s) due to increased recurrent state complexity.
 * **GRU (Gated Recurrent Unit):** Trained efficiently with 347,139 parameters, but underperformed compared to LSTM on this specific dataset, scoring an accuracy of **78.32%**.
-* **Insight on Sequence vs. Frequency:** While RNN models capture word sequence, social media toxicity often relies heavily on specific offensive keywords or slurs rather than long-range syntactic dependencies. This explains why simpler, frequency-based classical models (like TF-IDF + SVM/LogReg) outperformed basic recurrent architectures.
+* **Insight on Sequence vs. Frequency:** While RNN models capture word sequence, social media toxicity often relies heavily on specific offensive keywords or slurs rather than long range syntactic dependencies. This explains why simpler, frequency based classical models (like TF-IDF + SVM/LogReg) outperformed basic recurrent architectures.
 
 ![epoch-measurement](assets/epoch-measurement.png)
 
