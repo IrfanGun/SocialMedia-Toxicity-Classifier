@@ -124,6 +124,6 @@ The table below summarizes the performance, training time, inference speed, and 
 
 ---
 
-### 🚀 Live Brief DemoLive Brief Demo
+### 🚀 Live Brief Demo
 
 ![demo](assets/demo.gif)
